@@ -6,16 +6,16 @@
   <meta charset="utf-8">
   <title>Image Galleries with amp-carousel</title>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  
-  
+
+
   <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-  
+
   <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
-  
+
   <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
-  
+
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-    
+
   <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
   <link rel="canonical" href="https://example.com/advanced/image_galleries_with_amp-carousel/">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -69,7 +69,7 @@
       max-height: 30%;
     }
 
-    /* define some contants */
+    /* define some constants */
     .collapsible-captions {
       --caption-height: 32px;
       --image-height: 300px;
@@ -103,7 +103,7 @@
       bottom: 0;
       margin: 0;
       width: 100%;
-      /* inital height is one line */
+      /* initial height is one line */
       max-height: var(--caption-height);
       line-height: var(--caption-height);
       padding: 0 var(--button-size);
@@ -117,7 +117,7 @@
       z-index: 1000;
       /* some styling */
       color: var(--caption-color);
-      background: var(--caption-bg-color);      
+      background: var(--caption-bg-color);
     }
     /* expanded caption */
     .collapsible-captions figcaption.expanded {
@@ -147,14 +147,14 @@
       text-align: center;
       font-size: 12px;
       color: inherit;
-      cursor: pointer; 
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  
-  
+
+
   <amp-carousel class="carousel1" layout="responsive" height="450" width="500" type="slides">
     <div class="slide">
       <amp-img src="/img/Border_Collie.jpg" layout="responsive" width="500" height="300" alt="Border Collie"></amp-img>
@@ -177,8 +177,8 @@
     </div>
   </amp-carousel>
 
-  
-  
+
+
   <amp-carousel class="carousel2" layout="responsive" height="400" width="500" type="slides">
     <div class="slide">
       <amp-img src="/img/Border_Collie.jpg" layout="fill" alt="Border Collie"></amp-img>
@@ -208,7 +208,7 @@
     </div>
   </amp-carousel>
 
-  
+
   <amp-carousel class="collapsible-captions" height="332" layout="fixed-height" type="slides">
     <figure>
       <div class="fixed-height-container">
@@ -234,13 +234,13 @@
     </figure>
   </amp-carousel>
 
-  
+
   <div>
     <p>Selected slide: <span [text]="+selectedSlide + 1">1</span>/3</p>
 
     <amp-carousel controls
                   type="slides"
-                  width="400" 
+                  width="400"
                   height="300"
                   [slide]="selectedSlide" on="slideChange:AMP.setState({ selectedSlide: event.index })">
       <amp-img src="/img/image1.jpg" layout="fill"></amp-img>
@@ -249,8 +249,8 @@
     </amp-carousel>
   </div>
 
-  
-  
+
+
   <div>
     <amp-selector id="carouselWithPreviewSelector" class="carousel-preview" on="select:carouselWithPreview.goToSlide(index=event.targetOption)" layout="container">
       <amp-img option="0" selected src="https://unsplash.it/60/40?image=10" width="60" height="40" alt="a sample image"></amp-img>
@@ -258,10 +258,10 @@
       <amp-img option="2" src="https://unsplash.it/60/40?image=12" width="60" height="40" alt="a sample image"></amp-img>
       <amp-img option="3" src="https://unsplash.it/60/40?image=13" width="60" height="40" alt="a sample image"></amp-img>
     </amp-selector>
-    <amp-carousel id="carouselWithPreview" 
-                  width="400" 
-                  height="300" 
-                  layout="responsive" 
+    <amp-carousel id="carouselWithPreview"
+                  width="400"
+                  height="300"
+                  layout="responsive"
       type="slides"
       on="slideChange:carouselWithPreviewSelector.toggle(index=event.index, value=true)">
       <amp-img src="https://unsplash.it/400/300?image=10" layout="fill" alt="a sample image"></amp-img>
@@ -271,8 +271,8 @@
     </amp-carousel>
   </div>
 
-  
-  
+
+
   <div>
     <amp-selector id="carouselSelector" on="select:carousel.goToSlide(index=event.targetOption)" layout="container">
       <amp-carousel id="carouselPreview" class="carousel-preview" height="72" layout="fixed-height" type="carousel">
@@ -296,10 +296,10 @@
         <amp-img option="17" src="https://unsplash.it/60/40?image=117" width="60" height="40" alt="a sample image"></amp-img>
       </amp-carousel>
     </amp-selector>
-    <amp-carousel id="carousel" 
-      width="400" 
-      height="300" 
-      layout="responsive" 
+    <amp-carousel id="carousel"
+      width="400"
+      height="300"
+      layout="responsive"
       type="slides"
       on="slideChange:
               carouselSelector.toggle(index=event.index, value=true),
@@ -326,7 +326,7 @@
     </amp-carousel>
   </div>
 
-  
+
   <div>
     <amp-carousel id="carousel-with-lightbox" width="400" height="300" layout="responsive" type="slides" lightbox>
       <amp-img src="https://unsplash.it/400/300?image=10" width="400" height="300" layout="responsive" alt="a sample image"></amp-img>
@@ -336,6 +336,6 @@
     </amp-carousel>
   </div>
 
-  
+
 </body>
 </html>

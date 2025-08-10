@@ -241,7 +241,7 @@ function validateConfiguration(config) {
 
 let ampOptimizer = null;
 /**
- * Returns an AmpOptimizer for the given configuraion.
+ * Returns an AmpOptimizer for the given configuration.
  *
  * 1. cache set to false, s.t. it doesn't try to write to fs.
  * 2. minify:false is necessary to speed up the AmpOptimizer. terser also cannot be used since dynamic eval() is part of terser and banned by CloudflareWorkers.
