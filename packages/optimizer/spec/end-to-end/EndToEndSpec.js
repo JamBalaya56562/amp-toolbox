@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-require('fetch-mock');
 const createSpec = require('../helpers/TransformerRunner.js');
 const log = require('../../lib/log.js');
 const {
